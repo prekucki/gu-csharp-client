@@ -20,21 +20,22 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using OpenAPIDateConverter = gu_rest_api.Client.OpenAPIDateConverter;
+using OpenAPIDateConverter = GURestApi.Client.OpenAPIDateConverter;
 
-namespace gu_rest_api.Model
+namespace GURestApi.Model
 {
     /// <summary>
     /// StopCommand
     /// </summary>
     [DataContract]
-    public partial class StopCommand :  IEquatable<StopCommand>, IValidatableObject
+    public partial class StopCommand :  Command, IEquatable<StopCommand>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StopCommand" /> class.
         /// </summary>
         /// <param name="childId">id of asynchronous process, started with StartCommand.</param>
         public StopCommand(string childId = default(string))
+            :base(CommandType.StopCommand)
         {
             this.ChildId = childId;
         }
@@ -63,7 +64,7 @@ namespace gu_rest_api.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public virtual string ToJson()
+        public override string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

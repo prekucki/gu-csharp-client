@@ -16,7 +16,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace gu_rest_api.Client
+namespace GURestApi.Client
 {
     /// <summary>
     /// Represents a set of configuration settings

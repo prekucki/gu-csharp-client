@@ -15,13 +15,13 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
-using gu_rest_api.Api;
-using gu_rest_api.Model;
-using gu_rest_api.Client;
+using GURestApi.Api;
+using GURestApi.Model;
+using GURestApi.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
-namespace gu_rest_api.Test
+namespace GURestApi.Test
 {
     /// <summary>
     ///  Class for testing DeploymentSpec

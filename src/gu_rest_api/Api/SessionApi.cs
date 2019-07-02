@@ -13,10 +13,10 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using RestSharp;
-using gu_rest_api.Client;
-using gu_rest_api.Model;
+using GURestApi.Client;
+using GURestApi.Model;
 
-namespace gu_rest_api.Api
+namespace GURestApi.Api
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -30,7 +30,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="peerSet"></param>
         /// <returns>List&lt;string&gt;</returns>
@@ -42,7 +42,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="peerSet"></param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
@@ -53,7 +53,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="body"> (optional)</param>
         /// <returns>Object</returns>
@@ -65,7 +65,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of Object</returns>
@@ -76,7 +76,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentSpec"></param>
@@ -89,7 +89,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentSpec"></param>
@@ -101,7 +101,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// Allowed fileds:  * name        - human readable session name * expires     - session expiration timestamp * allocation  - resource allocation mode.
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <returns>long?</returns>
         long? CreateSession (HubSession body);
@@ -112,7 +112,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// Allowed fileds:  * name        - human readable session name * expires     - session expiration timestamp * allocation  - resource allocation mode.
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <returns>ApiResponse of long?</returns>
         ApiResponse<long?> CreateSessionWithHttpInfo (HubSession body);
@@ -122,7 +122,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="blobId">Blob identifier</param>
         /// <returns></returns>
@@ -134,7 +134,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="blobId">Blob identifier</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -145,7 +145,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
@@ -158,7 +158,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
@@ -170,7 +170,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns></returns>
         void DeleteSession (long? sessionId);
@@ -181,7 +181,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteSessionWithHttpInfo (long? sessionId);
@@ -191,7 +191,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="blobId">Blob identifier</param>
         /// <returns>System.IO.Stream</returns>
@@ -203,7 +203,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="blobId">Blob identifier</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
@@ -214,7 +214,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>Dictionary&lt;string, Object&gt;</returns>
         Dictionary<string, Object> GetConfig (long? sessionId);
@@ -225,7 +225,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>ApiResponse of Dictionary&lt;string, Object&gt;</returns>
         ApiResponse<Dictionary<string, Object>> GetConfigWithHttpInfo (long? sessionId);
@@ -235,7 +235,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>HubInfo</returns>
         HubInfo GetHubInfo ();
 
@@ -245,7 +245,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of HubInfo</returns>
         ApiResponse<HubInfo> GetHubInfoWithHttpInfo ();
         /// <summary>
@@ -254,7 +254,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>HubSession</returns>
         HubSession GetSession (long? sessionId);
@@ -265,7 +265,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>ApiResponse of HubSession</returns>
         ApiResponse<HubSession> GetSessionWithHttpInfo (long? sessionId);
@@ -275,7 +275,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>List&lt;BlobInfo&gt;</returns>
         List<BlobInfo> ListBlobs (long? sessionId);
@@ -286,7 +286,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>ApiResponse of List&lt;BlobInfo&gt;</returns>
         ApiResponse<List<BlobInfo>> ListBlobsWithHttpInfo (long? sessionId);
@@ -296,7 +296,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>List&lt;PeerInfo&gt;</returns>
         List<PeerInfo> ListSessionPeers (long? sessionId);
@@ -307,7 +307,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>ApiResponse of List&lt;PeerInfo&gt;</returns>
         ApiResponse<List<PeerInfo>> ListSessionPeersWithHttpInfo (long? sessionId);
@@ -317,7 +317,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="offset"> (optional, default to 0)</param>
         /// <returns>List&lt;HubSession&gt;</returns>
@@ -329,7 +329,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="offset"> (optional, default to 0)</param>
         /// <returns>ApiResponse of List&lt;HubSession&gt;</returns>
@@ -340,7 +340,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="config">New config stash value</param>
         /// <returns>long?</returns>
@@ -352,7 +352,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="config">New config stash value</param>
         /// <returns>ApiResponse of long?</returns>
@@ -363,7 +363,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
@@ -377,7 +377,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
@@ -390,7 +390,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="changes"> (optional)</param>
         /// <returns></returns>
@@ -402,7 +402,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="changes"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -413,7 +413,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="blobId">Blob identifier</param>
         /// <param name="body"> (optional)</param>
@@ -426,7 +426,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="blobId">Blob identifier</param>
         /// <param name="body"> (optional)</param>
@@ -440,7 +440,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="peerSet"></param>
         /// <returns>Task of List&lt;string&gt;</returns>
@@ -452,7 +452,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="peerSet"></param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
@@ -463,7 +463,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="body"> (optional)</param>
         /// <returns>Task of Object</returns>
@@ -475,7 +475,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="body"> (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
@@ -486,7 +486,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentSpec"></param>
@@ -499,7 +499,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentSpec"></param>
@@ -511,7 +511,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// Allowed fileds:  * name        - human readable session name * expires     - session expiration timestamp * allocation  - resource allocation mode.
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <returns>Task of long?</returns>
         System.Threading.Tasks.Task<long?> CreateSessionAsync (HubSession body);
@@ -522,7 +522,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// Allowed fileds:  * name        - human readable session name * expires     - session expiration timestamp * allocation  - resource allocation mode.
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <returns>Task of ApiResponse (long?)</returns>
         System.Threading.Tasks.Task<ApiResponse<long?>> CreateSessionAsyncWithHttpInfo (HubSession body);
@@ -532,7 +532,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="blobId">Blob identifier</param>
         /// <returns>Task of void</returns>
@@ -544,7 +544,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="blobId">Blob identifier</param>
         /// <returns>Task of ApiResponse</returns>
@@ -555,7 +555,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
@@ -568,7 +568,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
@@ -580,7 +580,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>Task of void</returns>
         System.Threading.Tasks.Task DeleteSessionAsync (long? sessionId);
@@ -591,7 +591,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteSessionAsyncWithHttpInfo (long? sessionId);
@@ -601,7 +601,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="blobId">Blob identifier</param>
         /// <returns>Task of System.IO.Stream</returns>
@@ -613,7 +613,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="blobId">Blob identifier</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
@@ -624,7 +624,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>Task of Dictionary&lt;string, Object&gt;</returns>
         System.Threading.Tasks.Task<Dictionary<string, Object>> GetConfigAsync (long? sessionId);
@@ -635,7 +635,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>Task of ApiResponse (Dictionary&lt;string, Object&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<Dictionary<string, Object>>> GetConfigAsyncWithHttpInfo (long? sessionId);
@@ -645,7 +645,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of HubInfo</returns>
         System.Threading.Tasks.Task<HubInfo> GetHubInfoAsync ();
 
@@ -655,7 +655,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (HubInfo)</returns>
         System.Threading.Tasks.Task<ApiResponse<HubInfo>> GetHubInfoAsyncWithHttpInfo ();
         /// <summary>
@@ -664,7 +664,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>Task of HubSession</returns>
         System.Threading.Tasks.Task<HubSession> GetSessionAsync (long? sessionId);
@@ -675,7 +675,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>Task of ApiResponse (HubSession)</returns>
         System.Threading.Tasks.Task<ApiResponse<HubSession>> GetSessionAsyncWithHttpInfo (long? sessionId);
@@ -685,7 +685,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>Task of List&lt;BlobInfo&gt;</returns>
         System.Threading.Tasks.Task<List<BlobInfo>> ListBlobsAsync (long? sessionId);
@@ -696,7 +696,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>Task of ApiResponse (List&lt;BlobInfo&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<BlobInfo>>> ListBlobsAsyncWithHttpInfo (long? sessionId);
@@ -706,7 +706,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>Task of List&lt;PeerInfo&gt;</returns>
         System.Threading.Tasks.Task<List<PeerInfo>> ListSessionPeersAsync (long? sessionId);
@@ -717,7 +717,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>Task of ApiResponse (List&lt;PeerInfo&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<PeerInfo>>> ListSessionPeersAsyncWithHttpInfo (long? sessionId);
@@ -727,7 +727,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="offset"> (optional, default to 0)</param>
         /// <returns>Task of List&lt;HubSession&gt;</returns>
@@ -739,7 +739,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="offset"> (optional, default to 0)</param>
         /// <returns>Task of ApiResponse (List&lt;HubSession&gt;)</returns>
@@ -750,7 +750,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="config">New config stash value</param>
         /// <returns>Task of long?</returns>
@@ -762,7 +762,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="config">New config stash value</param>
         /// <returns>Task of ApiResponse (long?)</returns>
@@ -773,7 +773,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
@@ -787,7 +787,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
@@ -800,7 +800,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="changes"> (optional)</param>
         /// <returns>Task of void</returns>
@@ -812,7 +812,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="changes"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
@@ -823,7 +823,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="blobId">Blob identifier</param>
         /// <param name="body"> (optional)</param>
@@ -836,7 +836,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="blobId">Blob identifier</param>
         /// <param name="body"> (optional)</param>
@@ -850,7 +850,7 @@ namespace gu_rest_api.Api
     /// </summary>
     public partial class SessionApi : ISessionApi
     {
-        private gu_rest_api.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private GURestApi.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SessionApi"/> class.
@@ -858,9 +858,9 @@ namespace gu_rest_api.Api
         /// <returns></returns>
         public SessionApi(String basePath)
         {
-            this.Configuration = new gu_rest_api.Client.Configuration { BasePath = basePath };
+            this.Configuration = new GURestApi.Client.Configuration { BasePath = basePath };
 
-            ExceptionFactory = gu_rest_api.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = GURestApi.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -869,9 +869,9 @@ namespace gu_rest_api.Api
         /// <returns></returns>
         public SessionApi()
         {
-            this.Configuration = gu_rest_api.Client.Configuration.Default;
+            this.Configuration = GURestApi.Client.Configuration.Default;
 
-            ExceptionFactory = gu_rest_api.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = GURestApi.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -880,14 +880,14 @@ namespace gu_rest_api.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public SessionApi(gu_rest_api.Client.Configuration configuration = null)
+        public SessionApi(GURestApi.Client.Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
-                this.Configuration = gu_rest_api.Client.Configuration.Default;
+                this.Configuration = GURestApi.Client.Configuration.Default;
             else
                 this.Configuration = configuration;
 
-            ExceptionFactory = gu_rest_api.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = GURestApi.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -913,12 +913,12 @@ namespace gu_rest_api.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public gu_rest_api.Client.Configuration Configuration {get; set;}
+        public GURestApi.Client.Configuration Configuration {get; set;}
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public gu_rest_api.Client.ExceptionFactory ExceptionFactory
+        public GURestApi.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -956,7 +956,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Manually adds peers to hub session 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="peerSet"></param>
         /// <returns>List&lt;string&gt;</returns>
@@ -969,7 +969,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Manually adds peers to hub session 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="peerSet"></param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
@@ -1045,7 +1045,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Manually adds peers to hub session 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="peerSet"></param>
         /// <returns>Task of List&lt;string&gt;</returns>
@@ -1059,7 +1059,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Manually adds peers to hub session 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="peerSet"></param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
@@ -1135,7 +1135,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Creates new lob 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="body"> (optional)</param>
         /// <returns>Object</returns>
@@ -1148,7 +1148,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Creates new lob 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of Object</returns>
@@ -1215,7 +1215,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Creates new lob 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="body"> (optional)</param>
         /// <returns>Task of Object</returns>
@@ -1229,7 +1229,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Creates new lob 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="body"> (optional)</param>
         /// <returns>Task of ApiResponse (Object)</returns>
@@ -1296,7 +1296,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Creates new deployment 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentSpec"></param>
@@ -1310,7 +1310,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Creates new deployment 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentSpec"></param>
@@ -1391,7 +1391,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Creates new deployment 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentSpec"></param>
@@ -1406,7 +1406,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Creates new deployment 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentSpec"></param>
@@ -1487,7 +1487,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Creates new hub session. Allowed fileds:  * name        - human readable session name * expires     - session expiration timestamp * allocation  - resource allocation mode.
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <returns>long?</returns>
         public long? CreateSession (HubSession body)
@@ -1499,7 +1499,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Creates new hub session. Allowed fileds:  * name        - human readable session name * expires     - session expiration timestamp * allocation  - resource allocation mode.
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <returns>ApiResponse of long?</returns>
         public ApiResponse< long? > CreateSessionWithHttpInfo (HubSession body)
@@ -1571,7 +1571,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Creates new hub session. Allowed fileds:  * name        - human readable session name * expires     - session expiration timestamp * allocation  - resource allocation mode.
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <returns>Task of long?</returns>
         public async System.Threading.Tasks.Task<long?> CreateSessionAsync (HubSession body)
@@ -1584,7 +1584,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Creates new hub session. Allowed fileds:  * name        - human readable session name * expires     - session expiration timestamp * allocation  - resource allocation mode.
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <returns>Task of ApiResponse (long?)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<long?>> CreateSessionAsyncWithHttpInfo (HubSession body)
@@ -1656,7 +1656,7 @@ namespace gu_rest_api.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="blobId">Blob identifier</param>
         /// <returns></returns>
@@ -1668,7 +1668,7 @@ namespace gu_rest_api.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="blobId">Blob identifier</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -1736,7 +1736,7 @@ namespace gu_rest_api.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="blobId">Blob identifier</param>
         /// <returns>Task of void</returns>
@@ -1749,7 +1749,7 @@ namespace gu_rest_api.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="blobId">Blob identifier</param>
         /// <returns>Task of ApiResponse</returns>
@@ -1817,7 +1817,7 @@ namespace gu_rest_api.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
@@ -1830,7 +1830,7 @@ namespace gu_rest_api.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
@@ -1903,7 +1903,7 @@ namespace gu_rest_api.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
@@ -1917,7 +1917,7 @@ namespace gu_rest_api.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
@@ -1990,7 +1990,7 @@ namespace gu_rest_api.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns></returns>
         public void DeleteSession (long? sessionId)
@@ -2001,7 +2001,7 @@ namespace gu_rest_api.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>ApiResponse of Object(void)</returns>
         public ApiResponse<Object> DeleteSessionWithHttpInfo (long? sessionId)
@@ -2064,7 +2064,7 @@ namespace gu_rest_api.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task DeleteSessionAsync (long? sessionId)
@@ -2076,7 +2076,7 @@ namespace gu_rest_api.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>Task of ApiResponse</returns>
         public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteSessionAsyncWithHttpInfo (long? sessionId)
@@ -2139,7 +2139,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Downloads binary content from the hub 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="blobId">Blob identifier</param>
         /// <returns>System.IO.Stream</returns>
@@ -2152,7 +2152,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Downloads binary content from the hub 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="blobId">Blob identifier</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
@@ -2221,7 +2221,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Downloads binary content from the hub 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="blobId">Blob identifier</param>
         /// <returns>Task of System.IO.Stream</returns>
@@ -2235,7 +2235,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Downloads binary content from the hub 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="blobId">Blob identifier</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
@@ -2304,7 +2304,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Gets configuration from stash 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>Dictionary&lt;string, Object&gt;</returns>
         public Dictionary<string, Object> GetConfig (long? sessionId)
@@ -2316,7 +2316,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Gets configuration from stash 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>ApiResponse of Dictionary&lt;string, Object&gt;</returns>
         public ApiResponse< Dictionary<string, Object> > GetConfigWithHttpInfo (long? sessionId)
@@ -2380,7 +2380,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Gets configuration from stash 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>Task of Dictionary&lt;string, Object&gt;</returns>
         public async System.Threading.Tasks.Task<Dictionary<string, Object>> GetConfigAsync (long? sessionId)
@@ -2393,7 +2393,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Gets configuration from stash 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>Task of ApiResponse (Dictionary&lt;string, Object&gt;)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<Dictionary<string, Object>>> GetConfigAsyncWithHttpInfo (long? sessionId)
@@ -2457,7 +2457,7 @@ namespace gu_rest_api.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>HubInfo</returns>
         public HubInfo GetHubInfo ()
         {
@@ -2468,7 +2468,7 @@ namespace gu_rest_api.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of HubInfo</returns>
         public ApiResponse< HubInfo > GetHubInfoWithHttpInfo ()
         {
@@ -2527,7 +2527,7 @@ namespace gu_rest_api.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of HubInfo</returns>
         public async System.Threading.Tasks.Task<HubInfo> GetHubInfoAsync ()
         {
@@ -2539,7 +2539,7 @@ namespace gu_rest_api.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (HubInfo)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<HubInfo>> GetHubInfoAsyncWithHttpInfo ()
         {
@@ -2598,7 +2598,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Gets hub session info 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>HubSession</returns>
         public HubSession GetSession (long? sessionId)
@@ -2610,7 +2610,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Gets hub session info 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>ApiResponse of HubSession</returns>
         public ApiResponse< HubSession > GetSessionWithHttpInfo (long? sessionId)
@@ -2674,7 +2674,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Gets hub session info 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>Task of HubSession</returns>
         public async System.Threading.Tasks.Task<HubSession> GetSessionAsync (long? sessionId)
@@ -2687,7 +2687,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Gets hub session info 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>Task of ApiResponse (HubSession)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<HubSession>> GetSessionAsyncWithHttpInfo (long? sessionId)
@@ -2751,7 +2751,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Lists currently allocated lobs 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>List&lt;BlobInfo&gt;</returns>
         public List<BlobInfo> ListBlobs (long? sessionId)
@@ -2763,7 +2763,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Lists currently allocated lobs 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>ApiResponse of List&lt;BlobInfo&gt;</returns>
         public ApiResponse< List<BlobInfo> > ListBlobsWithHttpInfo (long? sessionId)
@@ -2827,7 +2827,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Lists currently allocated lobs 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>Task of List&lt;BlobInfo&gt;</returns>
         public async System.Threading.Tasks.Task<List<BlobInfo>> ListBlobsAsync (long? sessionId)
@@ -2840,7 +2840,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Lists currently allocated lobs 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>Task of ApiResponse (List&lt;BlobInfo&gt;)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<List<BlobInfo>>> ListBlobsAsyncWithHttpInfo (long? sessionId)
@@ -2904,7 +2904,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// List session peers 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>List&lt;PeerInfo&gt;</returns>
         public List<PeerInfo> ListSessionPeers (long? sessionId)
@@ -2916,7 +2916,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// List session peers 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>ApiResponse of List&lt;PeerInfo&gt;</returns>
         public ApiResponse< List<PeerInfo> > ListSessionPeersWithHttpInfo (long? sessionId)
@@ -2980,7 +2980,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// List session peers 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>Task of List&lt;PeerInfo&gt;</returns>
         public async System.Threading.Tasks.Task<List<PeerInfo>> ListSessionPeersAsync (long? sessionId)
@@ -2993,7 +2993,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// List session peers 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <returns>Task of ApiResponse (List&lt;PeerInfo&gt;)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<List<PeerInfo>>> ListSessionPeersAsyncWithHttpInfo (long? sessionId)
@@ -3057,7 +3057,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Lists current hub sessions. 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="offset"> (optional, default to 0)</param>
         /// <returns>List&lt;HubSession&gt;</returns>
@@ -3070,7 +3070,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Lists current hub sessions. 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="offset"> (optional, default to 0)</param>
         /// <returns>ApiResponse of List&lt;HubSession&gt;</returns>
@@ -3133,7 +3133,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Lists current hub sessions. 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="offset"> (optional, default to 0)</param>
         /// <returns>Task of List&lt;HubSession&gt;</returns>
@@ -3147,7 +3147,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Lists current hub sessions. 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="offset"> (optional, default to 0)</param>
         /// <returns>Task of ApiResponse (List&lt;HubSession&gt;)</returns>
@@ -3210,7 +3210,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Sets configuration stash 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="config">New config stash value</param>
         /// <returns>long?</returns>
@@ -3223,7 +3223,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Sets configuration stash 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="config">New config stash value</param>
         /// <returns>ApiResponse of long?</returns>
@@ -3299,7 +3299,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Sets configuration stash 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="config">New config stash value</param>
         /// <returns>Task of long?</returns>
@@ -3313,7 +3313,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Sets configuration stash 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="config">New config stash value</param>
         /// <returns>Task of ApiResponse (long?)</returns>
@@ -3389,7 +3389,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Sends multiple commands for peer 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
@@ -3403,7 +3403,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Sends multiple commands for peer 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
@@ -3489,7 +3489,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Sends multiple commands for peer 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
@@ -3504,7 +3504,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Sends multiple commands for peer 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
@@ -3590,7 +3590,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Hub session update 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="changes"> (optional)</param>
         /// <returns></returns>
@@ -3602,7 +3602,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Hub session update 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="changes"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -3675,7 +3675,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Hub session update 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="changes"> (optional)</param>
         /// <returns>Task of void</returns>
@@ -3688,7 +3688,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Hub session update 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="changes"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
@@ -3761,7 +3761,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Uploads a binary content to the hub. 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="blobId">Blob identifier</param>
         /// <param name="body"> (optional)</param>
@@ -3774,7 +3774,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Uploads a binary content to the hub. 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="blobId">Blob identifier</param>
         /// <param name="body"> (optional)</param>
@@ -3852,7 +3852,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Uploads a binary content to the hub. 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="blobId">Blob identifier</param>
         /// <param name="body"> (optional)</param>
@@ -3866,7 +3866,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Uploads a binary content to the hub. 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionId">HUB session id</param>
         /// <param name="blobId">Blob identifier</param>
         /// <param name="body"> (optional)</param>

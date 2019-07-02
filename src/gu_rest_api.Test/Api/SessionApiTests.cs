@@ -17,11 +17,11 @@ using System.Reflection;
 using RestSharp;
 using NUnit.Framework;
 
-using gu_rest_api.Client;
-using gu_rest_api.Api;
-using gu_rest_api.Model;
+using GURestApi.Client;
+using GURestApi.Api;
+using GURestApi.Model;
 
-namespace gu_rest_api.Test
+namespace GURestApi.Test
 {
     /// <summary>
     ///  Class for testing SessionApi

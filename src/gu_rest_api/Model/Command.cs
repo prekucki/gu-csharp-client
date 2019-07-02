@@ -20,94 +20,48 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using OpenAPIDateConverter = gu_rest_api.Client.OpenAPIDateConverter;
+using OpenAPIDateConverter = GURestApi.Client.OpenAPIDateConverter;
 
-namespace gu_rest_api.Model
+namespace GURestApi.Model
 {
+    [JsonConverter(typeof(StringEnumConverter))]
+    public enum CommandType
+    {
+        [EnumMember(Value = "exec_command")]
+        ExecCommand = 1,
+        [EnumMember(Value = "open_command")]
+        OpenCommand,
+        [EnumMember(Value = "close_command")]
+        CloseCommand,
+        [EnumMember(Value = "start_command")]
+        StartCommand,
+        [EnumMember(Value = "stop_command")]
+        StopCommand,
+        [EnumMember(Value = "add_tags_command")]
+        AddTagsCommand,
+        [EnumMember(Value = "del_tags_command")]
+        DelTagsCommand,
+        [EnumMember(Value = "download_file_command")]
+        DownloadFileCommand,
+        [EnumMember(Value = "upload_file_command")]
+        UploadFileCommand,
+    }
+
     /// <summary>
     /// Command
     /// </summary>
     [DataContract]
-    public partial class Command :  IEquatable<Command>, IValidatableObject
+    public partial class Command : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Command" /> class.
         /// </summary>
-        /// <param name="exec">exec.</param>
-        /// <param name="open">open.</param>
-        /// <param name="close">close.</param>
-        /// <param name="start">start.</param>
-        /// <param name="stop">stop.</param>
-        /// <param name="addTags">addTags.</param>
-        /// <param name="delTags">delTags.</param>
-        /// <param name="downloadFile">downloadFile.</param>
-        /// <param name="uploadFile">uploadFile.</param>
-        public Command(ExecCommand exec = default(ExecCommand), Object open = default(Object), Object close = default(Object), StartCommand start = default(StartCommand), StopCommand stop = default(StopCommand), List<string> addTags = default(List<string>), List<string> delTags = default(List<string>), DownloadFileCommand downloadFile = default(DownloadFileCommand), UploadFileCommand uploadFile = default(UploadFileCommand))
+        protected Command(CommandType type)
         {
-            this.Exec = exec;
-            this.Open = open;
-            this.Close = close;
-            this.Start = start;
-            this.Stop = stop;
-            this.AddTags = addTags;
-            this.DelTags = delTags;
-            this.DownloadFile = downloadFile;
-            this.UploadFile = uploadFile;
+            Type = type;
         }
-        
-        /// <summary>
-        /// Gets or Sets Exec
-        /// </summary>
-        [DataMember(Name="exec", EmitDefaultValue=false)]
-        public ExecCommand Exec { get; set; }
 
-        /// <summary>
-        /// Gets or Sets Open
-        /// </summary>
-        [DataMember(Name="open", EmitDefaultValue=false)]
-        public Object Open { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Close
-        /// </summary>
-        [DataMember(Name="close", EmitDefaultValue=false)]
-        public Object Close { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Start
-        /// </summary>
-        [DataMember(Name="start", EmitDefaultValue=false)]
-        public StartCommand Start { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Stop
-        /// </summary>
-        [DataMember(Name="stop", EmitDefaultValue=false)]
-        public StopCommand Stop { get; set; }
-
-        /// <summary>
-        /// Gets or Sets AddTags
-        /// </summary>
-        [DataMember(Name="addTags", EmitDefaultValue=false)]
-        public List<string> AddTags { get; set; }
-
-        /// <summary>
-        /// Gets or Sets DelTags
-        /// </summary>
-        [DataMember(Name="delTags", EmitDefaultValue=false)]
-        public List<string> DelTags { get; set; }
-
-        /// <summary>
-        /// Gets or Sets DownloadFile
-        /// </summary>
-        [DataMember(Name="downloadFile", EmitDefaultValue=false)]
-        public DownloadFileCommand DownloadFile { get; set; }
-
-        /// <summary>
-        /// Gets or Sets UploadFile
-        /// </summary>
-        [DataMember(Name="uploadFile", EmitDefaultValue=false)]
-        public UploadFileCommand UploadFile { get; set; }
+        public CommandType Type {get; private set;}
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -117,15 +71,7 @@ namespace gu_rest_api.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Command {\n");
-            sb.Append("  Exec: ").Append(Exec).Append("\n");
-            sb.Append("  Open: ").Append(Open).Append("\n");
-            sb.Append("  Close: ").Append(Close).Append("\n");
-            sb.Append("  Start: ").Append(Start).Append("\n");
-            sb.Append("  Stop: ").Append(Stop).Append("\n");
-            sb.Append("  AddTags: ").Append(AddTags).Append("\n");
-            sb.Append("  DelTags: ").Append(DelTags).Append("\n");
-            sb.Append("  DownloadFile: ").Append(DownloadFile).Append("\n");
-            sb.Append("  UploadFile: ").Append(UploadFile).Append("\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -137,105 +83,6 @@ namespace gu_rest_api.Model
         public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
-        }
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as Command);
-        }
-
-        /// <summary>
-        /// Returns true if Command instances are equal
-        /// </summary>
-        /// <param name="input">Instance of Command to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(Command input)
-        {
-            if (input == null)
-                return false;
-
-            return 
-                (
-                    this.Exec == input.Exec ||
-                    (this.Exec != null &&
-                    this.Exec.Equals(input.Exec))
-                ) && 
-                (
-                    this.Open == input.Open ||
-                    (this.Open != null &&
-                    this.Open.Equals(input.Open))
-                ) && 
-                (
-                    this.Close == input.Close ||
-                    (this.Close != null &&
-                    this.Close.Equals(input.Close))
-                ) && 
-                (
-                    this.Start == input.Start ||
-                    (this.Start != null &&
-                    this.Start.Equals(input.Start))
-                ) && 
-                (
-                    this.Stop == input.Stop ||
-                    (this.Stop != null &&
-                    this.Stop.Equals(input.Stop))
-                ) && 
-                (
-                    this.AddTags == input.AddTags ||
-                    this.AddTags != null &&
-                    this.AddTags.SequenceEqual(input.AddTags)
-                ) && 
-                (
-                    this.DelTags == input.DelTags ||
-                    this.DelTags != null &&
-                    this.DelTags.SequenceEqual(input.DelTags)
-                ) && 
-                (
-                    this.DownloadFile == input.DownloadFile ||
-                    (this.DownloadFile != null &&
-                    this.DownloadFile.Equals(input.DownloadFile))
-                ) && 
-                (
-                    this.UploadFile == input.UploadFile ||
-                    (this.UploadFile != null &&
-                    this.UploadFile.Equals(input.UploadFile))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Exec != null)
-                    hashCode = hashCode * 59 + this.Exec.GetHashCode();
-                if (this.Open != null)
-                    hashCode = hashCode * 59 + this.Open.GetHashCode();
-                if (this.Close != null)
-                    hashCode = hashCode * 59 + this.Close.GetHashCode();
-                if (this.Start != null)
-                    hashCode = hashCode * 59 + this.Start.GetHashCode();
-                if (this.Stop != null)
-                    hashCode = hashCode * 59 + this.Stop.GetHashCode();
-                if (this.AddTags != null)
-                    hashCode = hashCode * 59 + this.AddTags.GetHashCode();
-                if (this.DelTags != null)
-                    hashCode = hashCode * 59 + this.DelTags.GetHashCode();
-                if (this.DownloadFile != null)
-                    hashCode = hashCode * 59 + this.DownloadFile.GetHashCode();
-                if (this.UploadFile != null)
-                    hashCode = hashCode * 59 + this.UploadFile.GetHashCode();
-                return hashCode;
-            }
         }
 
         /// <summary>

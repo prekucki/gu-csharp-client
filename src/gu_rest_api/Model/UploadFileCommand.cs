@@ -20,15 +20,15 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using OpenAPIDateConverter = gu_rest_api.Client.OpenAPIDateConverter;
+using OpenAPIDateConverter = GURestApi.Client.OpenAPIDateConverter;
 
-namespace gu_rest_api.Model
+namespace GURestApi.Model
 {
     /// <summary>
     /// UploadFileCommand
     /// </summary>
     [DataContract]
-    public partial class UploadFileCommand :  IEquatable<UploadFileCommand>, IValidatableObject
+    public partial class UploadFileCommand :  Command, IEquatable<UploadFileCommand>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UploadFileCommand" /> class.
@@ -36,6 +36,7 @@ namespace gu_rest_api.Model
         /// <param name="uri">uri.</param>
         /// <param name="filePath">filePath.</param>
         public UploadFileCommand(string uri = default(string), string filePath = default(string))
+            :base(CommandType.UploadFileCommand)
         {
             this.Uri = uri;
             this.FilePath = filePath;
@@ -71,7 +72,7 @@ namespace gu_rest_api.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public virtual string ToJson()
+        public override string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

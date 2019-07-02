@@ -15,7 +15,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using RestSharp;
 
-namespace gu_rest_api.Client
+namespace GURestApi.Client
 {
     /// <summary>
     /// Represents configuration aspects required to interact with the API endpoints.

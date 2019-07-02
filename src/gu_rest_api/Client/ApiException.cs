@@ -10,7 +10,7 @@
 
 using System;
 
-namespace gu_rest_api.Client
+namespace GURestApi.Client
 {
     /// <summary>
     /// API Exception

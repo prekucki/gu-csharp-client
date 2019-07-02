@@ -21,9 +21,9 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using JsonSubTypes;
 using System.ComponentModel.DataAnnotations;
-using OpenAPIDateConverter = gu_rest_api.Client.OpenAPIDateConverter;
+using OpenAPIDateConverter = GURestApi.Client.OpenAPIDateConverter;
 
-namespace gu_rest_api.Model
+namespace GURestApi.Model
 {
     /// <summary>
     /// HubSessionCommand

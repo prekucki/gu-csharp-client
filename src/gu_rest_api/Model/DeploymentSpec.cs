@@ -20,9 +20,9 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using OpenAPIDateConverter = gu_rest_api.Client.OpenAPIDateConverter;
+using OpenAPIDateConverter = GURestApi.Client.OpenAPIDateConverter;
 
-namespace gu_rest_api.Model
+namespace GURestApi.Model
 {
     /// <summary>
     /// DeploymentSpec
@@ -128,8 +128,7 @@ namespace gu_rest_api.Model
             return 
                 (
                     this.EnvType == input.EnvType ||
-                    (this.EnvType != null &&
-                    this.EnvType.Equals(input.EnvType))
+                    (this.EnvType.Equals(input.EnvType))
                 ) && 
                 (
                     this.Image == input.Image ||
@@ -162,8 +161,7 @@ namespace gu_rest_api.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.EnvType != null)
-                    hashCode = hashCode * 59 + this.EnvType.GetHashCode();
+                hashCode = hashCode * 59 + this.EnvType.GetHashCode();
                 if (this.Image != null)
                     hashCode = hashCode * 59 + this.Image.GetHashCode();
                 if (this.Name != null)

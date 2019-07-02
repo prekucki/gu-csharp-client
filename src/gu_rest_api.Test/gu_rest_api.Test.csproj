@@ -14,7 +14,7 @@ OpenAPI spec version: 1.0.0
     <ProjectGuid>{19F1DEBC-DE5E-4517-8062-F000CD499087}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>gu_rest_api.Test</RootNamespace>
+    <RootNamespace>GURestApi.Test</RootNamespace>
     <AssemblyName>gu_rest_api.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -80,10 +80,10 @@ OpenAPI spec version: 1.0.0
   </ItemGroup>
   <Import Project="$(MsBuildToolsPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-      <ProjectReference Include="..\gu_rest_api\gu_rest_api.csproj">
-          <Project>{7A4C11A6-0C11-4A05-9068-54349CAD32FB}</Project>
-          <Name>gu_rest_api</Name>
-      </ProjectReference>
+    <ProjectReference Include="..\gu_rest_api\GURestApi.csproj">
+      <Project>{7A4C11A6-0C11-4A05-9068-54349CAD32FB}</Project>
+      <Name>GURestApi</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
 
