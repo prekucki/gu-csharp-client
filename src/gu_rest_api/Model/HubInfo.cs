@@ -36,7 +36,7 @@ namespace GURestApi.Model
         /// <param name="version">semver of hub..</param>
         /// <param name="build">build.</param>
         /// <param name="caps">hub protocol capabilities.</param>
-        public HubInfo(string version = default(string), BuildInfo build = default(BuildInfo), List<string> caps = default(List<string>))
+        public HubInfo(string version = default(string), BuildInfo build = default(BuildInfo), Dictionary<string, string> caps = default(Dictionary<string, string>))
         {
             this.Version = version;
             this.Build = build;
@@ -68,7 +68,7 @@ namespace GURestApi.Model
         /// </summary>
         /// <value>hub protocol capabilities</value>
         [DataMember(Name="caps", EmitDefaultValue=false)]
-        public List<string> Caps { get; set; }
+        public Dictionary<string,string> Caps { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
