@@ -21,37 +21,112 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = GURestApi.Client.OpenAPIDateConverter;
+using Newtonsoft.Json.Serialization;
+using System.Reflection;
 
 namespace GURestApi.Model
 {
+    internal class CommandConverter : JsonConverter
+    {
+        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        {
+            /*JToken jObject = JToken.ReadFrom(reader);
+            BCClientType type = jObject["Type"].ToObject<BCClientType>();
+
+            BCClientConfig result;
+            switch (type)
+            {
+                case BCClientType.Ethereum:
+                    result = new EthereumClientConfig();
+                    break;
+                case BCClientType.Plasma:
+                    result = new PlasmaClientConfig();
+                    break;
+                default:
+                    throw new NotSupportedException();
+            }
+
+            serializer.Populate(jObject.CreateReader(), result);
+
+            return result;*/
+            throw new NotImplementedException();
+        }
+
+        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        {
+            Command cmd = value as Command;
+            JsonObjectContract contract = (JsonObjectContract)serializer.ContractResolver.ResolveContract(value.GetType());
+
+            writer.WriteStartObject();
+            Func<CommandType, string> enumName = (enumeration) =>
+            {
+                MemberInfo[] memberInfo = enumeration.GetType().GetMember(enumeration.ToString());
+
+                if (memberInfo != null && memberInfo.Length > 0)
+                {
+
+                    object[] attributes = memberInfo[0].GetCustomAttributes(typeof(EnumMemberAttribute), false);
+
+                    if (attributes != null && attributes.Length > 0)
+                    {
+                        return ((EnumMemberAttribute)attributes[0]).Value;
+                    }
+
+                }
+
+                return enumeration.ToString();
+            };
+            writer.WritePropertyName(enumName(cmd.Type));
+            writer.WriteStartObject();
+            foreach (var property in contract.Properties)
+            {
+                if (!property.Ignored)
+                {
+                    writer.WritePropertyName(property.PropertyName);
+                    serializer.Serialize(writer, property.ValueProvider.GetValue(value));
+                }
+            }
+            writer.WriteEndObject();
+            writer.WriteEndObject();
+        }
+
+        public override bool CanConvert(Type objectType)
+        {
+            if (objectType.IsSubclassOf(typeof(Command)))
+                return true;
+            return false;
+        }
+    }
+
     [JsonConverter(typeof(StringEnumConverter))]
     public enum CommandType
     {
-        [EnumMember(Value = "exec_command")]
+        [EnumMember(Value = "exec")]
         ExecCommand = 1,
-        [EnumMember(Value = "open_command")]
+        [EnumMember(Value = "open")]
         OpenCommand,
-        [EnumMember(Value = "close_command")]
+        [EnumMember(Value = "close")]
         CloseCommand,
-        [EnumMember(Value = "start_command")]
+        [EnumMember(Value = "start")]
         StartCommand,
-        [EnumMember(Value = "stop_command")]
+        [EnumMember(Value = "stop")]
         StopCommand,
-        [EnumMember(Value = "add_tags_command")]
+        [EnumMember(Value = "add_tags")]
         AddTagsCommand,
-        [EnumMember(Value = "del_tags_command")]
+        [EnumMember(Value = "del_tags")]
         DelTagsCommand,
-        [EnumMember(Value = "download_file_command")]
+        [EnumMember(Value = "download_file")]
         DownloadFileCommand,
-        [EnumMember(Value = "upload_file_command")]
+        [EnumMember(Value = "upload_file")]
         UploadFileCommand,
     }
 
     /// <summary>
     /// Command
     /// </summary>
+    [JsonConverter(typeof(CommandConverter))]
     [DataContract]
-    public partial class Command : IValidatableObject
+    public abstract class Command : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Command" /> class.
