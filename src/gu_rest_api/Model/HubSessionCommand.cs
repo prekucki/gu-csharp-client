@@ -19,7 +19,7 @@ using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using JsonSubTypes;
+//using JsonSubTypes;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = GURestApi.Client.OpenAPIDateConverter;
 
@@ -29,8 +29,8 @@ namespace GURestApi.Model
     /// HubSessionCommand
     /// </summary>
     [DataContract]
-    [JsonConverter(typeof(JsonSubtypes), "CommandType")]
-    [JsonSubtypes.KnownSubType(typeof(HubSessionTouchCommand), "HubSessionTouchCommand")]
+    //[JsonConverter(typeof(JsonSubtypes), "CommandType")]
+    //[JsonSubtypes.KnownSubType(typeof(HubSessionTouchCommand), "HubSessionTouchCommand")]
     public partial class HubSessionCommand :  IEquatable<HubSessionCommand>, IValidatableObject
     {
         /// <summary>
