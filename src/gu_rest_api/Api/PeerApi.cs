@@ -457,7 +457,7 @@ namespace GURestApi.Api
         public string CreateDeployment (string nodeId, DeploymentSpec spec)
         {
              ApiResponse<string> localVarResponse = CreateDeploymentWithHttpInfo(nodeId, spec);
-             return localVarResponse.Data;
+            return localVarResponse.Data.Replace("\"", null);
         }
 
         /// <summary>
@@ -545,8 +545,8 @@ namespace GURestApi.Api
         /// <returns>Task of string</returns>
         public async System.Threading.Tasks.Task<string> CreateDeploymentAsync (string nodeId, DeploymentSpec spec)
         {
-             ApiResponse<string> localVarResponse = await CreateDeploymentAsyncWithHttpInfo(nodeId, spec);
-             return localVarResponse.Data;
+            ApiResponse<string> localVarResponse = await CreateDeploymentAsyncWithHttpInfo(nodeId, spec);
+            return localVarResponse.Data.Replace("\"",null);
 
         }
 
