@@ -77,11 +77,11 @@ namespace GURestApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class HubInfo {\n");
-            sb.Append("  NodeId: ").Append(NodeId).Append("\n");
-            sb.Append("  Version: ").Append(Version).Append("\n");
-            sb.Append("  Build: ").Append(Build).Append("\n");
-            sb.Append("  Caps: ").Append(Caps).Append("\n");
+            sb.Append("class HubInf{\n");
+            sb.Append("\tNodeId: ").Append(NodeId).Append("\n");
+            sb.Append("\tVersion: ").Append(Version).Append("\n");
+            sb.Append("\tBuild: ").Append(Build).Append("\n");
+            sb.Append("\tCaps: ").Append(Caps).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -71,9 +71,9 @@ namespace GURestApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class BuildInfo {\n");
-            sb.Append("  Ts: ").Append(Ts).Append("\n");
-            sb.Append("  Target: ").Append(Target).Append("\n");
-            sb.Append("  CommitHash: ").Append(CommitHash).Append("\n");
+            sb.Append("\tTs: ").Append(Ts).Append("\n");
+            sb.Append("\tTarget: ").Append(Target).Append("\n");
+            sb.Append("\tCommitHash: ").Append(CommitHash).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
