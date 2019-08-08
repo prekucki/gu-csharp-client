@@ -36,7 +36,7 @@ namespace GURestApi.Model
         /// <param name="uri">uri.</param>
         /// <param name="filePath">filePath.</param>
         /// <param name="format">format.</param>
-        public DownloadFileCommand(string uri = default(string), string filePath = default(string), FileFormat format = default(FileFormat))
+        public DownloadFileCommand(string uri, string filePath, FileFormat format)
             : base(CommandType.DownloadFileCommand)
         {
             this.Uri = uri;

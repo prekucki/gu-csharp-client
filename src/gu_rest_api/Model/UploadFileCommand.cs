@@ -35,7 +35,7 @@ namespace GURestApi.Model
         /// </summary>
         /// <param name="uri">uri.</param>
         /// <param name="filePath">filePath.</param>
-        public UploadFileCommand(string uri = default(string), string filePath = default(string))
+        public UploadFileCommand(string uri, string filePath)
             :base(CommandType.UploadFileCommand)
         {
             this.Uri = uri;
