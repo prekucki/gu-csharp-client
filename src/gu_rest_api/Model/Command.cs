@@ -115,7 +115,7 @@ namespace GURestApi.Model
         AddTagsCommand,
         [EnumMember(Value = "del_tags")]
         DelTagsCommand,
-        [EnumMember(Value = "download_file")]
+        [EnumMember(Value = "downloadFile")]
         DownloadFileCommand,
         [EnumMember(Value = "uploadFile")]
         UploadFileCommand,

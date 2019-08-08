@@ -35,7 +35,7 @@ namespace GURestApi.Model
         /// </summary>
         /// <param name="executable">executable.</param>
         /// <param name="args">args.</param>
-        public ExecCommand(string executable = default(string), List<string> args = default(List<string>))
+        public ExecCommand(string executable, List<string> args)
             :base(CommandType.ExecCommand)
         {
             this.Executable = executable;

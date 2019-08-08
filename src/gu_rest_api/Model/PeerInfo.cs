@@ -148,7 +148,7 @@ namespace GURestApi.Model
                     this.Tags == input.Tags ||
                     this.Tags != null &&
                     this.Tags.SequenceEqual(input.Tags)
-                );
+                );//TODO: do tags matter? if tags change is this the same peer or not? What happens if PeerAddr stays the same but NodeId changes?
         }
 
         /// <summary>
