@@ -15,6 +15,7 @@ using System.Linq;
 using RestSharp;
 using GURestApi.Client;
 using GURestApi.Model;
+using System.Threading.Tasks;
 
 namespace GURestApi.Api
 {
@@ -1572,5 +1573,157 @@ namespace GURestApi.Api
                 (List<string>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<string>)));
         }
 
+        /// <summary>
+        /// Returns detailed peer info 
+        /// </summary>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="nodeId">GU Network node identifier</param>
+        /// <returns>PeerDetails</returns>
+        public PeerHardware GetPeerHardware(string nodeId)
+        {
+            ApiResponse<PeerHardware> localVarResponse = GetPeerHardwareWithHttpInfo(nodeId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Returns detailed peer info 
+        /// </summary>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="nodeId">GU Network node identifier</param>
+        /// <returns>ApiResponse of PeerDetails</returns>
+        public ApiResponse<PeerHardware> GetPeerHardwareWithHttpInfo(string nodeId)
+        {
+            // verify the required parameter 'nodeId' is set
+            if (nodeId == null)
+                throw new ApiException(400, "Missing required parameter 'nodeId' when calling PeerApi->GetPeerDetails");
+
+            var localVarPath = "/peers/{nodeId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (nodeId != null) localVarPathParams.Add("nodeId", this.Configuration.ApiClient.ParameterToString(nodeId)); // path parameter
+
+            // authentication (serviceToken) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-GU-APIKEY")))
+            {
+                localVarHeaderParams["X-GU-APIKEY"] = this.Configuration.GetApiKeyWithPrefix("X-GU-APIKEY");
+            }
+            // authentication (systemName) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-GU-APPNAME")))
+            {
+                localVarHeaderParams["X-GU-APPNAME"] = this.Configuration.GetApiKeyWithPrefix("X-GU-APPNAME");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetPeerDetails", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<PeerHardware>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (PeerHardware)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PeerHardware)));
+        }
+
+        /// <summary>
+        /// Returns detailed peer info 
+        /// </summary>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="nodeId">GU Network node identifier</param>
+        /// <returns>Task of PeerDetails</returns>
+        public async System.Threading.Tasks.Task<PeerHardware> GetPeerHardwareAsync(string nodeId)
+        {
+            ApiResponse<PeerHardware> localVarResponse = await GetPeerHardwareAsyncWithHttpInfo(nodeId);
+            return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Returns detailed peer info 
+        /// </summary>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="nodeId">GU Network node identifier</param>
+        /// <returns>Task of ApiResponse (PeerDetails)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<PeerHardware>> GetPeerHardwareAsyncWithHttpInfo(string nodeId)
+        {
+            // verify the required parameter 'nodeId' is set
+            if (nodeId == null)
+                throw new ApiException(400, "Missing required parameter 'nodeId' when calling PeerApi->GetPeerDetails");
+
+            var localVarPath = "/peers/{nodeId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (nodeId != null) localVarPathParams.Add("nodeId", this.Configuration.ApiClient.ParameterToString(nodeId)); // path parameter
+
+            // authentication (serviceToken) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-GU-APIKEY")))
+            {
+                localVarHeaderParams["X-GU-APIKEY"] = this.Configuration.GetApiKeyWithPrefix("X-GU-APIKEY");
+            }
+            // authentication (systemName) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-GU-APPNAME")))
+            {
+                localVarHeaderParams["X-GU-APPNAME"] = this.Configuration.GetApiKeyWithPrefix("X-GU-APPNAME");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetPeerDetails", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<PeerHardware>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (PeerHardware)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PeerHardware)));
+        }
     }
 }
