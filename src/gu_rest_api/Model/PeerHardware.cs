@@ -91,8 +91,7 @@ namespace GURestApi.Model
             return
                 (
                     this.CoreNumber == input.CoreNumber ||
-                    (this.CoreNumber != null &&
-                    this.CoreNumber.Equals(input.CoreNumber))
+                    (this.CoreNumber.Equals(input.CoreNumber))
                 );
         }
 
@@ -105,8 +104,7 @@ namespace GURestApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.CoreNumber != null)
-                    hashCode = hashCode * 59 + this.CoreNumber.GetHashCode();
+                hashCode = hashCode * 59 + this.CoreNumber.GetHashCode();
                 return hashCode;
             }
         }
