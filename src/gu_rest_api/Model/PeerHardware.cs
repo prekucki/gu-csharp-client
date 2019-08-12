@@ -25,26 +25,34 @@ using OpenAPIDateConverter = GURestApi.Client.OpenAPIDateConverter;
 namespace GURestApi.Model
 {
     /// <summary>
-    /// PeerHardware
+    /// GpuInfo
     /// </summary>
     [DataContract]
-    public partial class PeerHardware : IEquatable<PeerHardware>, IValidatableObject
+    public partial class GpuInfo : IEquatable<GpuInfo>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PeerHardware" /> class.
+        /// number of amd gpus
         /// </summary>
-        /// <param name="coreNumber">number of physical cores</param>
-        public PeerHardware(int coreNumber)
-        {
-            this.CoreNumber = coreNumber;
-        }
+        [DataMember(Name = "amd", EmitDefaultValue = false)]
+        public int AmdCount { get; set; }
 
         /// <summary>
-        /// number of physical cores
+        /// number of intel gpus
         /// </summary>
-        /// <value>number of physical cores</value>
-        [DataMember(Name = "coreNumber", EmitDefaultValue = false)]
-        public int CoreNumber { get; set; }
+        [DataMember(Name = "intel", EmitDefaultValue = false)]
+        public int IntelCount { get; set; }
+
+        /// <summary>
+        /// number of nvidia gpus
+        /// </summary>
+        [DataMember(Name = "nvidia", EmitDefaultValue = false)]
+        public int NVidiaCount { get; set; }
+
+        /// <summary>
+        /// number of other gpus
+        /// </summary>
+        [DataMember(Name = "other", EmitDefaultValue = false)]
+        public int OtherCount { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,7 +62,232 @@ namespace GURestApi.Model
         {
             var sb = new StringBuilder();
             sb.Append("class PeerHardware {\n");
-            sb.Append("  CoreNumber: ").Append(CoreNumber).Append("\n");
+            sb.Append("\tAmdCount: ").Append(AmdCount).Append("\n");
+            sb.Append("\tIntelCount: ").Append(IntelCount).Append("\n");
+            sb.Append("\tNVidiaCount: ").Append(NVidiaCount).Append("\n");
+            sb.Append("\tOtherCount: ").Append(OtherCount).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns the JSON string presentation of the object
+        /// </summary>
+        /// <returns>JSON string presentation of the object</returns>
+        public virtual string ToJson()
+        {
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        /// <param name="input">Object to be compared</param>
+        /// <returns>Boolean</returns>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as GpuInfo);
+        }
+
+        /// <summary>
+        /// Returns true if GpuInfo instances are equal
+        /// </summary>
+        /// <param name="input">Instance of GpuInfo to be compared</param>
+        /// <returns>Boolean</returns>
+        public bool Equals(GpuInfo input)
+        {
+            if (input == null)
+                return false;
+
+            return
+                (
+                    this.AmdCount == input.AmdCount &&
+                    this.NVidiaCount == input.NVidiaCount &&
+                    this.IntelCount == input.IntelCount &&
+                    this.OtherCount == input.OtherCount
+                );
+        }
+
+        /// <summary>
+        /// Gets the hash code
+        /// </summary>
+        /// <returns>Hash code</returns>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                hashCode = hashCode * 59 + this.AmdCount.GetHashCode();
+                hashCode = hashCode * 59 + this.IntelCount.GetHashCode();
+                hashCode = hashCode * 59 + this.NVidiaCount.GetHashCode();
+                hashCode = hashCode * 59 + this.OtherCount.GetHashCode();
+                return hashCode;
+            }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            yield break;
+        }
+    }
+
+    /// <summary>
+    /// MemoryInfo
+    /// </summary>
+    [DataContract]
+    public partial class MemoryInfo : IEquatable<MemoryInfo>, IValidatableObject
+    {
+        /// <summary>
+        /// Number of free bytes
+        /// </summary>
+        [DataMember(Name = "free", EmitDefaultValue = false)]
+        public long FreeBytes { get; set; }
+
+        /// <summary>
+        /// Number of total bytes
+        /// </summary>
+        [DataMember(Name = "total", EmitDefaultValue = false)]
+        public long TotalBytes { get; set; }
+
+        /// <summary>
+        /// Number of used bytes
+        /// </summary>
+        [DataMember(Name = "used", EmitDefaultValue = false)]
+        public long UsedBytes { get; set; }
+
+        /// <summary>
+        /// Returns the string presentation of the object
+        /// </summary>
+        /// <returns>String presentation of the object</returns>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class PeerHardware {\n");
+            sb.Append("\tFreeBytes: ").Append(FreeBytes).Append("\n");
+            sb.Append("\tTotalBytes: ").Append(TotalBytes).Append("\n");
+            sb.Append("\tUsedBytes: ").Append(UsedBytes).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns the JSON string presentation of the object
+        /// </summary>
+        /// <returns>JSON string presentation of the object</returns>
+        public virtual string ToJson()
+        {
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        /// <param name="input">Object to be compared</param>
+        /// <returns>Boolean</returns>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as MemoryInfo);
+        }
+
+        /// <summary>
+        /// Returns true if MemoryInfo instances are equal
+        /// </summary>
+        /// <param name="input">Instance of MemoryInfo to be compared</param>
+        /// <returns>Boolean</returns>
+        public bool Equals(MemoryInfo input)
+        {
+            if (input == null)
+                return false;
+
+            return
+                (
+                    this.FreeBytes == input.FreeBytes &&
+                    this.TotalBytes == input.TotalBytes &&
+                    this.UsedBytes == input.UsedBytes
+                );
+        }
+
+        /// <summary>
+        /// Gets the hash code
+        /// </summary>
+        /// <returns>Hash code</returns>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                hashCode = hashCode * 59 + this.FreeBytes.GetHashCode();
+                hashCode = hashCode * 59 + this.TotalBytes.GetHashCode();
+                hashCode = hashCode * 59 + this.UsedBytes.GetHashCode();
+                return hashCode;
+            }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            yield break;
+        }
+    }
+
+    /// <summary>
+    /// PeerHardware
+    /// </summary>
+    [DataContract]
+    public partial class PeerHardware : IEquatable<PeerHardware>, IValidatableObject
+    {
+        /// <summary>
+        /// gpu information
+        /// </summary>
+        [DataMember(Name = "gpu", EmitDefaultValue = false)]
+        public GpuInfo GpuInfo { get; set; }
+
+        /// <summary>
+        /// name of the host
+        /// </summary>
+        [DataMember(Name = "hostname", EmitDefaultValue = false)]
+        public string HostName { get; set; }
+
+        /// <summary>
+        /// numbner of cpu cores
+        /// </summary>
+        [DataMember(Name = "num_cores", EmitDefaultValue = false)]
+        public int CoreCount { get; set; }
+
+        /// <summary>
+        /// name of the host operating system
+        /// </summary>
+        [DataMember(Name = "os", EmitDefaultValue = false)]
+        public string OsName { get; set; }
+
+        /// <summary>
+        /// memory information
+        /// </summary>
+        [DataMember(Name = "ram", EmitDefaultValue = false)]
+        public MemoryInfo MemoryInfo { get; set; }
+
+        /// <summary>
+        /// Returns the string presentation of the object
+        /// </summary>
+        /// <returns>String presentation of the object</returns>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class PeerHardware {\n");
+            sb.Append("\tHostname: ").Append(HostName).Append("\n");
+            sb.Append("\tOS: ").Append(OsName).Append("\n");
+            sb.Append("\tCoreCount: ").Append(CoreCount).Append("\n");
+            sb.Append("\tGpuInfo: ").Append(GpuInfo).Append("\n");
+            sb.Append("\tMemoryInfo: ").Append(MemoryInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -90,8 +323,11 @@ namespace GURestApi.Model
 
             return
                 (
-                    this.CoreNumber == input.CoreNumber ||
-                    (this.CoreNumber.Equals(input.CoreNumber))
+                    this.HostName == input.HostName &&
+                    this.OsName == input.OsName &&
+                    this.CoreCount == input.CoreCount &&
+                    this.GpuInfo == input.GpuInfo &&
+                    this.MemoryInfo == input.MemoryInfo
                 );
         }
 
@@ -104,7 +340,13 @@ namespace GURestApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.CoreNumber.GetHashCode();
+                hashCode = hashCode * 59 + this.HostName.GetHashCode();
+                hashCode = hashCode * 59 + this.OsName.GetHashCode();
+                hashCode = hashCode * 59 + this.CoreCount.GetHashCode();
+                if (GpuInfo!=null)
+                    hashCode = hashCode * 59 + this.GpuInfo.GetHashCode();
+                if (MemoryInfo != null)
+                    hashCode = hashCode * 59 + this.MemoryInfo.GetHashCode();
                 return hashCode;
             }
         }
@@ -118,6 +360,13 @@ namespace GURestApi.Model
         {
             yield break;
         }
+    }
+
+    [DataContract]
+    internal class PeerHardwareWrapper
+    {
+        [DataMember(Name = "Ok", EmitDefaultValue = false)]
+        public PeerHardware Hardware { get; set; }
     }
 
 }

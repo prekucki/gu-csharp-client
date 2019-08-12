@@ -1436,6 +1436,7 @@ namespace GURestApi.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "*/*"
             };
+
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1619,6 +1620,7 @@ namespace GURestApi.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (nodeId != null) localVarPathParams.Add("nodeId", this.Configuration.ApiClient.ParameterToString(nodeId)); // path parameter
+            localVarPostBody = "{\"b\":null}"; // http body (model) parameter
 
             // authentication (serviceToken) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-GU-APIKEY")))
@@ -1644,9 +1646,10 @@ namespace GURestApi.Api
                 if (exception != null) throw exception;
             }
 
+            PeerHardwareWrapper phWrap = (PeerHardwareWrapper)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PeerHardwareWrapper));
+
             return new ApiResponse<PeerHardware>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (PeerHardware)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PeerHardware)));
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)), phWrap?.Hardware);
         }
 
         /// <summary>
@@ -1674,7 +1677,7 @@ namespace GURestApi.Api
             if (nodeId == null)
                 throw new ApiException(400, "Missing required parameter 'nodeId' when calling PeerApi->GetPeerDetails");
 
-            var localVarPath = "/peers/{nodeId}";
+            var localVarPath = "/peers/send-to/{nodeId}/19354";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1696,6 +1699,7 @@ namespace GURestApi.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (nodeId != null) localVarPathParams.Add("nodeId", this.Configuration.ApiClient.ParameterToString(nodeId)); // path parameter
+            localVarPostBody = "{\"b\":null}"; // http body (model) parameter
 
             // authentication (serviceToken) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-GU-APIKEY")))
@@ -1710,7 +1714,7 @@ namespace GURestApi.Api
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
             int localVarStatusCode = (int)localVarResponse.StatusCode;
@@ -1721,9 +1725,10 @@ namespace GURestApi.Api
                 if (exception != null) throw exception;
             }
 
+            PeerHardwareWrapper phWrap = (PeerHardwareWrapper)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PeerHardwareWrapper));
+
             return new ApiResponse<PeerHardware>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (PeerHardware)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PeerHardware)));
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)), phWrap?.Hardware);
         }
     }
 }
