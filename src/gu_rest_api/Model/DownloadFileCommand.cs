@@ -20,15 +20,15 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using OpenAPIDateConverter = gu_rest_api.Client.OpenAPIDateConverter;
+using OpenAPIDateConverter = GURestApi.Client.OpenAPIDateConverter;
 
-namespace gu_rest_api.Model
+namespace GURestApi.Model
 {
     /// <summary>
     /// DownloadFileCommand
     /// </summary>
     [DataContract]
-    public partial class DownloadFileCommand :  IEquatable<DownloadFileCommand>, IValidatableObject
+    public partial class DownloadFileCommand :  Command, IEquatable<DownloadFileCommand>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DownloadFileCommand" /> class.
@@ -36,7 +36,8 @@ namespace gu_rest_api.Model
         /// <param name="uri">uri.</param>
         /// <param name="filePath">filePath.</param>
         /// <param name="format">format.</param>
-        public DownloadFileCommand(string uri = default(string), string filePath = default(string), FileFormat format = default(FileFormat))
+        public DownloadFileCommand(string uri, string filePath, FileFormat format)
+            : base(CommandType.DownloadFileCommand)
         {
             this.Uri = uri;
             this.FilePath = filePath;
@@ -80,7 +81,7 @@ namespace gu_rest_api.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public virtual string ToJson()
+        public override string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -118,8 +119,7 @@ namespace gu_rest_api.Model
                 ) && 
                 (
                     this.Format == input.Format ||
-                    (this.Format != null &&
-                    this.Format.Equals(input.Format))
+                    (this.Format.Equals(input.Format))
                 );
         }
 
@@ -136,8 +136,7 @@ namespace gu_rest_api.Model
                     hashCode = hashCode * 59 + this.Uri.GetHashCode();
                 if (this.FilePath != null)
                     hashCode = hashCode * 59 + this.FilePath.GetHashCode();
-                if (this.Format != null)
-                    hashCode = hashCode * 59 + this.Format.GetHashCode();
+                hashCode = hashCode * 59 + this.Format.GetHashCode();
                 return hashCode;
             }
         }

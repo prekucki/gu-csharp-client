@@ -12,7 +12,7 @@
 using System;
 using RestSharp;
 
-namespace gu_rest_api.Client
+namespace GURestApi.Client
 {
     /// <summary>
     /// A delegate to ExceptionFactory method

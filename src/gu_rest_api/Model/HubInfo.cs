@@ -20,9 +20,9 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using OpenAPIDateConverter = gu_rest_api.Client.OpenAPIDateConverter;
+using OpenAPIDateConverter = GURestApi.Client.OpenAPIDateConverter;
 
-namespace gu_rest_api.Model
+namespace GURestApi.Model
 {
     /// <summary>
     /// General information about given HUB.
@@ -36,7 +36,7 @@ namespace gu_rest_api.Model
         /// <param name="version">semver of hub..</param>
         /// <param name="build">build.</param>
         /// <param name="caps">hub protocol capabilities.</param>
-        public HubInfo(string version = default(string), BuildInfo build = default(BuildInfo), List<string> caps = default(List<string>))
+        public HubInfo(string version = default(string), BuildInfo build = default(BuildInfo), Dictionary<string, string> caps = default(Dictionary<string, string>))
         {
             this.Version = version;
             this.Build = build;
@@ -68,7 +68,7 @@ namespace gu_rest_api.Model
         /// </summary>
         /// <value>hub protocol capabilities</value>
         [DataMember(Name="caps", EmitDefaultValue=false)]
-        public List<string> Caps { get; set; }
+        public Dictionary<string,string> Caps { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -77,11 +77,11 @@ namespace gu_rest_api.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class HubInfo {\n");
-            sb.Append("  NodeId: ").Append(NodeId).Append("\n");
-            sb.Append("  Version: ").Append(Version).Append("\n");
-            sb.Append("  Build: ").Append(Build).Append("\n");
-            sb.Append("  Caps: ").Append(Caps).Append("\n");
+            sb.Append("class HubInf{\n");
+            sb.Append("\tNodeId: ").Append(NodeId).Append("\n");
+            sb.Append("\tVersion: ").Append(Version).Append("\n");
+            sb.Append("\tBuild: ").Append(Build).Append("\n");
+            sb.Append("\tCaps: ").Append(Caps).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

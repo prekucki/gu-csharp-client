@@ -13,10 +13,11 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using RestSharp;
-using gu_rest_api.Client;
-using gu_rest_api.Model;
+using GURestApi.Client;
+using GURestApi.Model;
+using System.Threading.Tasks;
 
-namespace gu_rest_api.Api
+namespace GURestApi.Api
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -30,7 +31,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="spec"></param>
         /// <returns>string</returns>
@@ -42,7 +43,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="spec"></param>
         /// <returns>ApiResponse of string</returns>
@@ -53,7 +54,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
         /// <returns></returns>
@@ -65,7 +66,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -76,7 +77,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>HubInfo</returns>
         HubInfo GetHubInfo ();
 
@@ -86,7 +87,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of HubInfo</returns>
         ApiResponse<HubInfo> GetHubInfoWithHttpInfo ();
         /// <summary>
@@ -95,7 +96,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <returns>PeerDetails</returns>
         PeerDetails GetPeerDetails (string nodeId);
@@ -106,7 +107,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <returns>ApiResponse of PeerDetails</returns>
         ApiResponse<PeerDetails> GetPeerDetailsWithHttpInfo (string nodeId);
@@ -116,7 +117,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <returns>List&lt;DeploymentInfo&gt;</returns>
         List<DeploymentInfo> ListDeployments (string nodeId);
@@ -127,7 +128,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <returns>ApiResponse of List&lt;DeploymentInfo&gt;</returns>
         ApiResponse<List<DeploymentInfo>> ListDeploymentsWithHttpInfo (string nodeId);
@@ -137,7 +138,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="offset"> (optional, default to 0)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <returns>List&lt;PeerInfo&gt;</returns>
@@ -149,7 +150,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="offset"> (optional, default to 0)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <returns>ApiResponse of List&lt;PeerInfo&gt;</returns>
@@ -160,7 +161,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
         /// <param name="commands"> (optional)</param>
@@ -173,7 +174,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
         /// <param name="commands"> (optional)</param>
@@ -187,7 +188,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="spec"></param>
         /// <returns>Task of string</returns>
@@ -199,7 +200,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="spec"></param>
         /// <returns>Task of ApiResponse (string)</returns>
@@ -210,7 +211,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
         /// <returns>Task of void</returns>
@@ -222,7 +223,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
         /// <returns>Task of ApiResponse</returns>
@@ -233,7 +234,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of HubInfo</returns>
         System.Threading.Tasks.Task<HubInfo> GetHubInfoAsync ();
 
@@ -243,7 +244,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (HubInfo)</returns>
         System.Threading.Tasks.Task<ApiResponse<HubInfo>> GetHubInfoAsyncWithHttpInfo ();
         /// <summary>
@@ -252,7 +253,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <returns>Task of PeerDetails</returns>
         System.Threading.Tasks.Task<PeerDetails> GetPeerDetailsAsync (string nodeId);
@@ -263,7 +264,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <returns>Task of ApiResponse (PeerDetails)</returns>
         System.Threading.Tasks.Task<ApiResponse<PeerDetails>> GetPeerDetailsAsyncWithHttpInfo (string nodeId);
@@ -273,7 +274,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <returns>Task of List&lt;DeploymentInfo&gt;</returns>
         System.Threading.Tasks.Task<List<DeploymentInfo>> ListDeploymentsAsync (string nodeId);
@@ -284,7 +285,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <returns>Task of ApiResponse (List&lt;DeploymentInfo&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<DeploymentInfo>>> ListDeploymentsAsyncWithHttpInfo (string nodeId);
@@ -294,7 +295,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="offset"> (optional, default to 0)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <returns>Task of List&lt;PeerInfo&gt;</returns>
@@ -306,7 +307,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="offset"> (optional, default to 0)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <returns>Task of ApiResponse (List&lt;PeerInfo&gt;)</returns>
@@ -317,7 +318,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
         /// <param name="commands"> (optional)</param>
@@ -330,7 +331,7 @@ namespace gu_rest_api.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
         /// <param name="commands"> (optional)</param>
@@ -344,7 +345,7 @@ namespace gu_rest_api.Api
     /// </summary>
     public partial class PeerApi : IPeerApi
     {
-        private gu_rest_api.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private GURestApi.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="PeerApi"/> class.
@@ -352,9 +353,9 @@ namespace gu_rest_api.Api
         /// <returns></returns>
         public PeerApi(String basePath)
         {
-            this.Configuration = new gu_rest_api.Client.Configuration { BasePath = basePath };
+            this.Configuration = new GURestApi.Client.Configuration { BasePath = basePath };
 
-            ExceptionFactory = gu_rest_api.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = GURestApi.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -363,9 +364,9 @@ namespace gu_rest_api.Api
         /// <returns></returns>
         public PeerApi()
         {
-            this.Configuration = gu_rest_api.Client.Configuration.Default;
+            this.Configuration = GURestApi.Client.Configuration.Default;
 
-            ExceptionFactory = gu_rest_api.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = GURestApi.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -374,14 +375,14 @@ namespace gu_rest_api.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public PeerApi(gu_rest_api.Client.Configuration configuration = null)
+        public PeerApi(GURestApi.Client.Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
-                this.Configuration = gu_rest_api.Client.Configuration.Default;
+                this.Configuration = GURestApi.Client.Configuration.Default;
             else
                 this.Configuration = configuration;
 
-            ExceptionFactory = gu_rest_api.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = GURestApi.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -407,12 +408,12 @@ namespace gu_rest_api.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public gu_rest_api.Client.Configuration Configuration {get; set;}
+        public GURestApi.Client.Configuration Configuration {get; set;}
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public gu_rest_api.Client.ExceptionFactory ExceptionFactory
+        public GURestApi.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -450,20 +451,20 @@ namespace gu_rest_api.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="spec"></param>
         /// <returns>string</returns>
         public string CreateDeployment (string nodeId, DeploymentSpec spec)
         {
              ApiResponse<string> localVarResponse = CreateDeploymentWithHttpInfo(nodeId, spec);
-             return localVarResponse.Data;
+            return localVarResponse.Data.Replace("\"", null);
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="spec"></param>
         /// <returns>ApiResponse of string</returns>
@@ -539,21 +540,21 @@ namespace gu_rest_api.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="spec"></param>
         /// <returns>Task of string</returns>
         public async System.Threading.Tasks.Task<string> CreateDeploymentAsync (string nodeId, DeploymentSpec spec)
         {
-             ApiResponse<string> localVarResponse = await CreateDeploymentAsyncWithHttpInfo(nodeId, spec);
-             return localVarResponse.Data;
+            ApiResponse<string> localVarResponse = await CreateDeploymentAsyncWithHttpInfo(nodeId, spec);
+            return localVarResponse.Data.Replace("\"",null);
 
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="spec"></param>
         /// <returns>Task of ApiResponse (string)</returns>
@@ -629,7 +630,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Removes deployment 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
         /// <returns></returns>
@@ -641,7 +642,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Removes deployment 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -709,7 +710,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Removes deployment 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
         /// <returns>Task of void</returns>
@@ -722,7 +723,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Removes deployment 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
         /// <returns>Task of ApiResponse</returns>
@@ -790,7 +791,7 @@ namespace gu_rest_api.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>HubInfo</returns>
         public HubInfo GetHubInfo ()
         {
@@ -801,7 +802,7 @@ namespace gu_rest_api.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of HubInfo</returns>
         public ApiResponse< HubInfo > GetHubInfoWithHttpInfo ()
         {
@@ -860,7 +861,7 @@ namespace gu_rest_api.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of HubInfo</returns>
         public async System.Threading.Tasks.Task<HubInfo> GetHubInfoAsync ()
         {
@@ -872,7 +873,7 @@ namespace gu_rest_api.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (HubInfo)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<HubInfo>> GetHubInfoAsyncWithHttpInfo ()
         {
@@ -931,7 +932,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Returns detailed peer info 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <returns>PeerDetails</returns>
         public PeerDetails GetPeerDetails (string nodeId)
@@ -943,7 +944,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Returns detailed peer info 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <returns>ApiResponse of PeerDetails</returns>
         public ApiResponse< PeerDetails > GetPeerDetailsWithHttpInfo (string nodeId)
@@ -1007,7 +1008,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Returns detailed peer info 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <returns>Task of PeerDetails</returns>
         public async System.Threading.Tasks.Task<PeerDetails> GetPeerDetailsAsync (string nodeId)
@@ -1020,7 +1021,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Returns detailed peer info 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <returns>Task of ApiResponse (PeerDetails)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<PeerDetails>> GetPeerDetailsAsyncWithHttpInfo (string nodeId)
@@ -1084,7 +1085,7 @@ namespace gu_rest_api.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <returns>List&lt;DeploymentInfo&gt;</returns>
         public List<DeploymentInfo> ListDeployments (string nodeId)
@@ -1096,7 +1097,7 @@ namespace gu_rest_api.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <returns>ApiResponse of List&lt;DeploymentInfo&gt;</returns>
         public ApiResponse< List<DeploymentInfo> > ListDeploymentsWithHttpInfo (string nodeId)
@@ -1160,7 +1161,7 @@ namespace gu_rest_api.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <returns>Task of List&lt;DeploymentInfo&gt;</returns>
         public async System.Threading.Tasks.Task<List<DeploymentInfo>> ListDeploymentsAsync (string nodeId)
@@ -1173,7 +1174,7 @@ namespace gu_rest_api.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <returns>Task of ApiResponse (List&lt;DeploymentInfo&gt;)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<List<DeploymentInfo>>> ListDeploymentsAsyncWithHttpInfo (string nodeId)
@@ -1237,7 +1238,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Returns a list hub peers. 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="offset"> (optional, default to 0)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <returns>List&lt;PeerInfo&gt;</returns>
@@ -1250,7 +1251,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Returns a list hub peers. 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="offset"> (optional, default to 0)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <returns>ApiResponse of List&lt;PeerInfo&gt;</returns>
@@ -1313,7 +1314,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Returns a list hub peers. 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="offset"> (optional, default to 0)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <returns>Task of List&lt;PeerInfo&gt;</returns>
@@ -1327,7 +1328,7 @@ namespace gu_rest_api.Api
         /// <summary>
         /// Returns a list hub peers. 
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="offset"> (optional, default to 0)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <returns>Task of ApiResponse (List&lt;PeerInfo&gt;)</returns>
@@ -1390,7 +1391,7 @@ namespace gu_rest_api.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
         /// <param name="commands"> (optional)</param>
@@ -1404,7 +1405,7 @@ namespace gu_rest_api.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
         /// <param name="commands"> (optional)</param>
@@ -1435,6 +1436,7 @@ namespace gu_rest_api.Api
             String[] localVarHttpHeaderAccepts = new String[] {
                 "*/*"
             };
+
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1482,7 +1484,7 @@ namespace gu_rest_api.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
         /// <param name="commands"> (optional)</param>
@@ -1497,7 +1499,7 @@ namespace gu_rest_api.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="gu_rest_api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="nodeId">GU Network node identifier</param>
         /// <param name="deploymentId"></param>
         /// <param name="commands"> (optional)</param>
@@ -1572,5 +1574,161 @@ namespace gu_rest_api.Api
                 (List<string>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<string>)));
         }
 
+        /// <summary>
+        /// Returns detailed peer info 
+        /// </summary>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="nodeId">GU Network node identifier</param>
+        /// <returns>PeerDetails</returns>
+        public PeerHardware GetPeerHardware(string nodeId)
+        {
+            ApiResponse<PeerHardware> localVarResponse = GetPeerHardwareWithHttpInfo(nodeId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Returns detailed peer info 
+        /// </summary>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="nodeId">GU Network node identifier</param>
+        /// <returns>ApiResponse of PeerDetails</returns>
+        public ApiResponse<PeerHardware> GetPeerHardwareWithHttpInfo(string nodeId)
+        {
+            // verify the required parameter 'nodeId' is set
+            if (nodeId == null)
+                throw new ApiException(400, "Missing required parameter 'nodeId' when calling PeerApi->GetPeerDetails");
+
+            var localVarPath = "/peers/{nodeId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (nodeId != null) localVarPathParams.Add("nodeId", this.Configuration.ApiClient.ParameterToString(nodeId)); // path parameter
+            localVarPostBody = "{\"b\":null}"; // http body (model) parameter
+
+            // authentication (serviceToken) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-GU-APIKEY")))
+            {
+                localVarHeaderParams["X-GU-APIKEY"] = this.Configuration.GetApiKeyWithPrefix("X-GU-APIKEY");
+            }
+            // authentication (systemName) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-GU-APPNAME")))
+            {
+                localVarHeaderParams["X-GU-APPNAME"] = this.Configuration.GetApiKeyWithPrefix("X-GU-APPNAME");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetPeerDetails", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            PeerHardwareWrapper phWrap = (PeerHardwareWrapper)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PeerHardwareWrapper));
+
+            return new ApiResponse<PeerHardware>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)), phWrap?.Hardware);
+        }
+
+        /// <summary>
+        /// Returns detailed peer info 
+        /// </summary>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="nodeId">GU Network node identifier</param>
+        /// <returns>Task of PeerDetails</returns>
+        public async System.Threading.Tasks.Task<PeerHardware> GetPeerHardwareAsync(string nodeId)
+        {
+            ApiResponse<PeerHardware> localVarResponse = await GetPeerHardwareAsyncWithHttpInfo(nodeId);
+            return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Returns detailed peer info 
+        /// </summary>
+        /// <exception cref="GURestApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="nodeId">GU Network node identifier</param>
+        /// <returns>Task of ApiResponse (PeerDetails)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<PeerHardware>> GetPeerHardwareAsyncWithHttpInfo(string nodeId)
+        {
+            // verify the required parameter 'nodeId' is set
+            if (nodeId == null)
+                throw new ApiException(400, "Missing required parameter 'nodeId' when calling PeerApi->GetPeerDetails");
+
+            var localVarPath = "/peers/send-to/{nodeId}/19354";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "*/*"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (nodeId != null) localVarPathParams.Add("nodeId", this.Configuration.ApiClient.ParameterToString(nodeId)); // path parameter
+            localVarPostBody = "{\"b\":null}"; // http body (model) parameter
+
+            // authentication (serviceToken) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-GU-APIKEY")))
+            {
+                localVarHeaderParams["X-GU-APIKEY"] = this.Configuration.GetApiKeyWithPrefix("X-GU-APIKEY");
+            }
+            // authentication (systemName) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-GU-APPNAME")))
+            {
+                localVarHeaderParams["X-GU-APPNAME"] = this.Configuration.GetApiKeyWithPrefix("X-GU-APPNAME");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetPeerDetails", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            PeerHardwareWrapper phWrap = (PeerHardwareWrapper)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PeerHardwareWrapper));
+
+            return new ApiResponse<PeerHardware>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)), phWrap?.Hardware);
+        }
     }
 }

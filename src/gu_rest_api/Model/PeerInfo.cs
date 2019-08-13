@@ -20,9 +20,9 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using OpenAPIDateConverter = gu_rest_api.Client.OpenAPIDateConverter;
+using OpenAPIDateConverter = GURestApi.Client.OpenAPIDateConverter;
 
-namespace gu_rest_api.Model
+namespace GURestApi.Model
 {
     /// <summary>
     /// General information about GU subnetwork node
@@ -148,7 +148,7 @@ namespace gu_rest_api.Model
                     this.Tags == input.Tags ||
                     this.Tags != null &&
                     this.Tags.SequenceEqual(input.Tags)
-                );
+                );//TODO: do tags matter? if tags change is this the same peer or not? What happens if PeerAddr stays the same but NodeId changes?
         }
 
         /// <summary>

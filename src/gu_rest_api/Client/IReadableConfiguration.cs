@@ -11,7 +11,7 @@
 
 using System.Collections.Generic;
 
-namespace gu_rest_api.Client
+namespace GURestApi.Client
 {
     /// <summary>
     /// Represents a readable-only configuration contract.

@@ -20,9 +20,9 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using OpenAPIDateConverter = gu_rest_api.Client.OpenAPIDateConverter;
+using OpenAPIDateConverter = GURestApi.Client.OpenAPIDateConverter;
 
-namespace gu_rest_api.Model
+namespace GURestApi.Model
 {
     /// <summary>
     /// BuildInfo
@@ -71,9 +71,9 @@ namespace gu_rest_api.Model
         {
             var sb = new StringBuilder();
             sb.Append("class BuildInfo {\n");
-            sb.Append("  Ts: ").Append(Ts).Append("\n");
-            sb.Append("  Target: ").Append(Target).Append("\n");
-            sb.Append("  CommitHash: ").Append(CommitHash).Append("\n");
+            sb.Append("\tTs: ").Append(Ts).Append("\n");
+            sb.Append("\tTarget: ").Append(Target).Append("\n");
+            sb.Append("\tCommitHash: ").Append(CommitHash).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

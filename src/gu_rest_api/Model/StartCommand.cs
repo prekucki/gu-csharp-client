@@ -20,15 +20,15 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using OpenAPIDateConverter = gu_rest_api.Client.OpenAPIDateConverter;
+using OpenAPIDateConverter = GURestApi.Client.OpenAPIDateConverter;
 
-namespace gu_rest_api.Model
+namespace GURestApi.Model
 {
     /// <summary>
     /// StartCommand
     /// </summary>
     [DataContract]
-    public partial class StartCommand :  IEquatable<StartCommand>, IValidatableObject
+    public partial class StartCommand :  Command, IEquatable<StartCommand>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StartCommand" /> class.
@@ -36,6 +36,7 @@ namespace gu_rest_api.Model
         /// <param name="executable">executable.</param>
         /// <param name="args">args.</param>
         public StartCommand(string executable = default(string), List<string> args = default(List<string>))
+            :base(CommandType.StartCommand)
         {
             this.Executable = executable;
             this.Args = args;
@@ -71,7 +72,7 @@ namespace gu_rest_api.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public virtual string ToJson()
+        public override string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

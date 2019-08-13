@@ -21,7 +21,7 @@ using System.Text;
 using Newtonsoft.Json;
 using RestSharp;
 
-namespace gu_rest_api.Client
+namespace GURestApi.Client
 {
     /// <summary>
     /// API client is mainly responsible for making the HTTP call to the API backend.
@@ -52,7 +52,7 @@ namespace gu_rest_api.Client
         /// </summary>
         public ApiClient()
         {
-            Configuration = gu_rest_api.Client.Configuration.Default;
+            Configuration = GURestApi.Client.Configuration.Default;
             RestClient = new RestClient("http://127.0.0.1:61622");
         }
 
@@ -63,7 +63,7 @@ namespace gu_rest_api.Client
         /// <param name="config">An instance of Configuration.</param>
         public ApiClient(Configuration config)
         {
-            Configuration = config ?? gu_rest_api.Client.Configuration.Default;
+            Configuration = config ?? GURestApi.Client.Configuration.Default;
 
             RestClient = new RestClient(Configuration.BasePath);
         }
@@ -134,7 +134,7 @@ namespace gu_rest_api.Client
             // add file parameter, if any
             foreach(var param in fileParams)
             {
-                request.AddFile(param.Value.Name, param.Value.Writer, param.Value.FileName, param.Value.ContentType);
+                request.AddFile(param.Value.Name, param.Value.Writer, param.Value.FileName, param.Value.ContentLength, param.Value.ContentType);
             }
 
             if (postBody != null) // http body (model or byte[]) parameter
